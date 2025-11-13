@@ -1,64 +1,37 @@
-# 🕵️‍♀️ Insurance Fraud Detection (Realistic Noisy Data)
+Insurance Claim Fraud Detection System
+📌 Project Overview
 
-A machine learning project to detect **insurance frauds** while ensuring **genuine claims remain unaffected**.  
-The dataset is enhanced with **real-world noise, missing values, and label errors** to mimic practical fraud detection challenges.
+This project aims to detect fraudulent insurance claims while ensuring that genuine claims are processed quickly. It leverages advanced machine learning techniques to mimic real-world fraud detection challenges such as imbalanced data, missing values, and noisy information.
 
----
+🚀 Key Features
 
-## 🎯 Objective
+End-to-End ML Pipeline: Data preprocessing, feature engineering, imputation, modeling, and evaluation.
 
-- Identify fraudulent claims using ML models.
-- Simulate real-world conditions with noisy, imbalanced data.
-- Focus on **high recall** to catch frauds **without wrongly flagging genuine claims**.
+Hybrid Imputation Strategy: KNN imputer for numeric features and mode imputation for categorical variables.
 
----
+Imbalance Handling: Applied SMOTE and precision–recall threshold tuning to focus on minimizing false negatives.
 
-## ⚙️ Tech Stack
+Modeling: Implemented Random Forest and XGBoost for fraud detection, emphasizing recall and precision trade-offs.
 
-- Python, pandas, NumPy  
-- scikit-learn, XGBoost, Random Forest  
-- imbalanced-learn (SMOTE)  
-- matplotlib, seaborn  
+Performance Focus: Designed to detect fraudulent claims effectively without delaying genuine claims.
 
----
+🧠 Workflow
 
-## 🧩 Data Simulation
+Data Preparation – Cleaned data, handled missing values using hybrid imputation.
 
-Real-world inconsistencies added:
-- Gaussian noise to numeric columns (`claim_amount`, `premium`, etc.)
-- Missing values (~10%)  
-- Label flips (5%)  
-- Date shifts (±10 days)  
-- Category drift (city, region)  
-- Fraud camouflage: 25% fraud cases adjusted to appear genuine
+Feature Engineering – Created ratios like claim_to_sum_ratio, premium_to_sum_ratio, and claim_delay_ratio.
 
-All noise added **carefully** to preserve data realism and **avoid disturbing genuine claims**.
+Imbalance Handling – Applied SMOTE and tuned thresholds for optimal recall–precision balance.
 
----
+Model Training – Trained and compared Random Forest and XGBoost models.
 
-## 🧠 Model Pipeline
+Model Evaluation – Used classification metrics and Precision–Recall trade-off curves for performance validation.
 
-1. **Preprocessing:** Handle missing data, encode categorical vars  
-2. **Balancing:** SMOTE applied for class imbalance  
-3. **Modeling:** Random Forest, XGBoost, Logistic Regression  
-4. **Evaluation:** Accuracy + Recall (priority)  
+📈 Results
 
----
+Achieved high recall and balanced precision on noisy real-world–like data.
 
-## 📈 Results
+Minimized false negatives, reducing potential financial loss.
 
-| Model          | Accuracy | Recall | Precision |
-|----------------|-----------|---------|------------|
-| Random Forest  | 0.87      | 0.85    | 0.82       |
-| XGBoost        | 0.86      | 0.84    | 0.81       |
-
-Model maintains **high fraud recall** while **minimizing false alarms** on genuine claims.
-
----
-
-## 🚀 Future Scope
-
-- SHAP for explainability  
-- Streamlit dashboard for fraud probability  
-- Model retraining under feature drift  
+Ensured genuine claims are processed efficiently.
 
